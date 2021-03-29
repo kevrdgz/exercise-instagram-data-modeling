@@ -24,17 +24,14 @@ class Followers(Base):
     user_from_id = Column(Integer, ForeignKey('user.id'))
     user_to_id = Column(Integer, ForeignKey('user.id'))
 
-class Media(Base):
-    __tablename__ = 'media'
-    id = Column(Integer, primary_key = True)
-    mediatype = Column(Enum('video','photo'))
-    url = Column(String(250))
-    post_id = Column(Integer, ForeignKey('post.user_id'))
 
 class Post(Base):
     __tablename__ = 'post'
     id = Column(Integer, primary_key = True)
     user_id = Column(Integer,)
+    mediatype = Column(Enum('video','photo'))
+    url = Column(String(250))
+    post_id = Column(Integer, ForeignKey('post.user_id'))
 
 class Comment(Base):
     __tablename__ = 'comment'
