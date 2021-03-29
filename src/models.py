@@ -25,6 +25,7 @@ class Followers(Base):
     user_to_id = Column(Integer, ForeignKey('user.id'))
 
 
+
 class Post(Base):
     __tablename__ = 'post'
     id = Column(Integer, primary_key = True)
