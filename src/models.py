@@ -29,10 +29,10 @@ class Followers(Base):
 class Post(Base):
     __tablename__ = 'post'
     id = Column(Integer, primary_key = True)
-    user_id = Column(Integer,)
+    user_id = Column(Integer, ForeignKey('user.id'))
     mediatype = Column(Enum('video','photo'))
     url = Column(String(250))
-    post_id = Column(Integer, ForeignKey('post.user_id'))
+   
 
 class Comment(Base):
     __tablename__ = 'comment'
